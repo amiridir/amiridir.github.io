@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El Amir Abdelkader IDIR — Ingénieur IA & Systèmes Numériques</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#050810;--bg2:#0b0f1a;--bg3:#111828;--accent:#00d4ff;--accent-dim:rgba(0,212,255,.12);--text:#e8eaf0;--text-muted:#6b7280;--text-dim:#9ca3af;--border:rgba(0,212,255,.15);--border-subtle:rgba(255,255,255,.06);--mono:'JetBrains Mono',monospace;--display:'Syne',sans-serif;--body:'DM Sans',sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--body);font-size:16px;line-height:1.7;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(0,212,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,212,255,.03) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;z-index:0}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.25rem 4rem;display:flex;align-items:center;justify-content:space-between;background:rgba(5,8,16,.7);backdrop-filter:blur(16px);border-bottom:1px solid var(--border-subtle)}
+.nav-logo{font-family:var(--mono);font-size:.85rem;color:var(--accent);letter-spacing:.05em;text-decoration:none}
+.nav-links{display:flex;gap:2.5rem;list-style:none}
+.nav-links a{font-family:var(--mono);font-size:.78rem;color:var(--text-dim);text-decoration:none;letter-spacing:.08em;transition:color .2s;text-transform:uppercase}
+.nav-links a:hover{color:var(--accent)}
+.nav-cta{font-family:var(--mono);font-size:.78rem;color:var(--accent);border:1px solid var(--accent);padding:.45rem 1.2rem;border-radius:4px;text-decoration:none;letter-spacing:.08em;transition:background .2s,color .2s;text-transform:uppercase}
+.nav-cta:hover{background:var(--accent);color:var(--bg)}
+section{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:7rem 2rem}
+#hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding-top:8rem;max-width:1100px;position:relative}
+.hero-tag{font-family:var(--mono);font-size:.78rem;color:var(--accent);letter-spacing:.15em;text-transform:uppercase;margin-bottom:1.5rem;display:flex;align-items:center;gap:.75rem}
+.hero-tag::before{content:'';display:block;width:32px;height:1px;background:var(--accent)}
+#typed-text{font-family:var(--mono);font-size:1rem;color:var(--accent);letter-spacing:.08em;display:block;margin-bottom:1rem;min-height:1.5em}
+h1{font-family:var(--display);font-size:clamp(3rem,7vw,5.5rem);font-weight:800;line-height:1.05;letter-spacing:-.02em;margin-bottom:1.5rem}
+.hero-name{color:var(--text)}.hero-accent{color:var(--accent)}
+.hero-sub{font-size:1.15rem;color:var(--text-dim);max-width:560px;margin-bottom:2.5rem;font-weight:300;line-height:1.8}
+.hero-badges{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:2.5rem}
+.badge{font-family:var(--mono);font-size:.72rem;color:var(--text-dim);background:var(--bg3);border:1px solid var(--border-subtle);padding:.35rem .85rem;border-radius:3px;letter-spacing:.05em}
+.badge.hl{color:var(--accent);border-color:var(--border);background:var(--accent-dim)}
+.hero-ctas{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-p{font-family:var(--mono);font-size:.82rem;background:var(--accent);color:var(--bg);padding:.9rem 2rem;border-radius:4px;text-decoration:none;font-weight:700;letter-spacing:.08em;text-transform:uppercase;transition:opacity .2s,transform .2s;display:inline-block}
+.btn-p:hover{opacity:.88;transform:translateY(-1px)}
+.btn-o{font-family:var(--mono);font-size:.82rem;color:var(--text);border:1px solid var(--border-subtle);padding:.9rem 2rem;border-radius:4px;text-decoration:none;letter-spacing:.08em;text-transform:uppercase;transition:border-color .2s,color .2s,transform .2s;display:inline-block}
+.btn-o:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px)}
+.hero-scroll{position:absolute;bottom:3rem;left:2rem;font-family:var(--mono);font-size:.72rem;color:var(--text-muted);letter-spacing:.12em;text-transform:uppercase;animation:float 2.5s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.photo-wrap{position:absolute;right:0;top:50%;transform:translateY(-50%);width:260px;height:320px;border-radius:12px;overflow:hidden;border:1px solid var(--border)}
+.photo-wrap img{width:100%;height:100%;object-fit:cover;object-position:center top;filter:grayscale(15%)}
+.sh{margin-bottom:4rem}
+.st{font-family:var(--mono);font-size:.72rem;color:var(--accent);letter-spacing:.2em;text-transform:uppercase;margin-bottom:1rem;display:flex;align-items:center;gap:.75rem}
+.st::after{content:'';display:block;flex:1;max-width:48px;height:1px;background:var(--accent);opacity:.5}
+h2{font-family:var(--display);font-size:clamp(2rem,4vw,3rem);font-weight:700;letter-spacing:-.02em;line-height:1.1}
+.ag{display:grid;grid-template-columns:1.3fr 1fr;gap:5rem;align-items:center}
+.at p{color:var(--text-dim);margin-bottom:1.25rem;font-size:1.05rem;line-height:1.8}
+.at p strong{color:var(--text);font-weight:500}
+.hl2{color:var(--accent);font-weight:500}
+.asg{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+.sc{background:var(--bg2);border:1px solid var(--border-subtle);border-radius:8px;padding:1.5rem;transition:border-color .2s,transform .2s}
+.sc:hover{border-color:var(--border);transform:translateY(-2px)}
+.sn{font-family:var(--display);font-size:2.2rem;font-weight:800;color:var(--accent);line-height:1;margin-bottom:.35rem}
+.sl{font-size:.82rem;color:var(--text-muted);font-family:var(--mono);letter-spacing:.05em}
+.tl{position:relative;padding-left:2rem}
+.tl::before{content:'';position:absolute;left:0;top:8px;bottom:0;width:1px;background:linear-gradient(to bottom,var(--accent),transparent);opacity:.3}
+.ti{position:relative;margin-bottom:3.5rem}
+.ti::before{content:'';position:absolute;left:-2.45rem;top:8px;width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent)}
+.tm{display:flex;align-items:center;gap:1rem;margin-bottom:.6rem;flex-wrap:wrap}
+.td{font-family:var(--mono);font-size:.75rem;color:var(--accent);letter-spacing:.08em}
+.tc{font-family:var(--mono);font-size:.75rem;color:var(--text-muted);border:1px solid var(--border-subtle);padding:.2rem .65rem;border-radius:3px}
+.tt{font-family:var(--display);font-size:1.35rem;font-weight:700;color:var(--text);margin-bottom:.4rem}
+.tlo{font-family:var(--mono);font-size:.75rem;color:var(--text-muted);margin-bottom:.9rem}
+.tdesc{color:var(--text-dim);font-size:.97rem;line-height:1.75;margin-bottom:1rem}
+.tags{display:flex;flex-wrap:wrap;gap:.5rem}
+.tag{font-family:var(--mono);font-size:.7rem;color:var(--text-muted);background:var(--bg3);border:1px solid var(--border-subtle);padding:.28rem .7rem;border-radius:3px;letter-spacing:.04em}
+.rtag{font-family:var(--mono);font-size:.7rem;color:var(--accent);background:var(--accent-dim);border:1px solid var(--border);padding:.28rem .7rem;border-radius:3px;letter-spacing:.04em}
+.pg{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem}
+.pc{background:var(--bg2);border:1px solid var(--border-subtle);border-radius:10px;padding:2rem;position:relative;overflow:hidden;transition:border-color .3s,transform .3s;display:flex;flex-direction:column;cursor:pointer}
+.pc::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--accent),transparent);opacity:0;transition:opacity .3s}
+.pc:hover{border-color:var(--border);transform:translateY(-4px)}
+.pc:hover::before{opacity:1}
+.pc.ft{border-color:rgba(0,212,255,.25);grid-column:span 2}
+.pn{font-family:var(--mono);font-size:.72rem;color:var(--accent);opacity:.5;margin-bottom:1rem;letter-spacing:.1em}
+.pt{font-family:var(--display);font-size:1.25rem;font-weight:700;color:var(--text);margin-bottom:.5rem;line-height:1.3}
+.px{font-family:var(--mono);font-size:.72rem;color:var(--text-muted);letter-spacing:.05em;margin-bottom:1rem}
+.pd{color:var(--text-dim);font-size:.93rem;line-height:1.7;flex:1;margin-bottom:1.25rem}
+.pr{display:flex;align-items:center;gap:.6rem;padding:.75rem 1rem;background:var(--accent-dim);border-radius:6px;margin-bottom:1.25rem;font-family:var(--mono);font-size:.78rem;color:var(--accent);letter-spacing:.04em}
+.pr::before{content:'→'}
+.pcta{margin-top:1.25rem;font-family:var(--mono);font-size:.72rem;color:var(--accent);letter-spacing:.08em;text-transform:uppercase;opacity:.6;transition:opacity .2s}
+.pc:hover .pcta{opacity:1}
+.sg{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.sg2{background:var(--bg2);border:1px solid var(--border-subtle);border-radius:10px;padding:1.75rem;transition:border-color .2s}
+.sg2:hover{border-color:var(--border)}
+.si{font-size:1.4rem;margin-bottom:.75rem;display:block}
+.sgt{font-family:var(--display);font-size:1rem;font-weight:700;color:var(--text);margin-bottom:1rem}
+.sl2{display:flex;flex-direction:column;gap:.5rem}
+.sk{font-family:var(--mono);font-size:.78rem;color:var(--text-dim);display:flex;align-items:center;gap:.6rem;letter-spacing:.03em}
+.sk::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--accent);flex-shrink:0;opacity:.5}
+.div{width:100%;height:1px;background:var(--border-subtle);margin:2rem 0}
+#contact{text-align:center}
+.cb{background:var(--bg2);border:1px solid var(--border-subtle);border-radius:16px;padding:4rem 3rem;max-width:680px;margin:0 auto;position:relative;overflow:hidden}
+.cb::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--accent),transparent)}
+.cb p{color:var(--text-dim);font-size:1.05rem;margin-bottom:2.5rem;line-height:1.7}
+.cls{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin-bottom:2rem}
+.cl{font-family:var(--mono);font-size:.8rem;color:var(--text-dim);text-decoration:none;border:1px solid var(--border-subtle);padding:.7rem 1.4rem;border-radius:5px;letter-spacing:.06em;transition:color .2s,border-color .2s,transform .2s;display:flex;align-items:center;gap:.5rem}
+.cl:hover{color:var(--accent);border-color:var(--border);transform:translateY(-2px)}
+footer{border-top:1px solid var(--border-subtle);padding:2rem 4rem;display:flex;justify-content:space-between;align-items:center;position:relative;z-index:1;max-width:1100px;margin:0 auto}
+footer p{font-family:var(--mono);font-size:.72rem;color:var(--text-muted);letter-spacing:.08em}
+footer span{color:var(--accent)}
+.fade-in{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+
+/* MODAL */
+.mo{position:fixed;inset:0;background:rgba(5,8,16,.85);z-index:200;opacity:0;pointer-events:none;transition:opacity .3s;backdrop-filter:blur(4px)}
+.mo.open{opacity:1;pointer-events:all}
+.md{position:fixed;top:0;right:0;bottom:0;width:min(820px,100vw);background:var(--bg2);border-left:1px solid var(--border);z-index:201;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);overflow-y:auto;display:flex;flex-direction:column}
+.md.open{transform:translateX(0)}
+.mh{padding:2rem 2.5rem 1.5rem;border-bottom:1px solid var(--border-subtle);display:flex;justify-content:space-between;align-items:flex-start;position:sticky;top:0;background:var(--bg2);z-index:1}
+.mx{background:none;border:1px solid var(--border-subtle);color:var(--text-dim);cursor:pointer;font-family:var(--mono);font-size:.8rem;padding:.5rem 1rem;border-radius:4px;letter-spacing:.08em;transition:color .2s,border-color .2s;flex-shrink:0;margin-left:1rem}
+.mx:hover{color:var(--accent);border-color:var(--accent)}
+.mb{padding:2.5rem;flex:1}
+.mtag{font-family:var(--mono);font-size:.7rem;color:var(--accent);letter-spacing:.15em;text-transform:uppercase;margin-bottom:.6rem}
+.mttl{font-family:var(--display);font-size:1.8rem;font-weight:800;margin-bottom:.5rem;line-height:1.2}
+.msub{font-family:var(--mono);font-size:.78rem;color:var(--text-muted);margin-bottom:2rem}
+.ms{margin-bottom:2.5rem}
+.mst{font-family:var(--mono);font-size:.72rem;color:var(--accent);letter-spacing:.15em;text-transform:uppercase;margin-bottom:1rem;padding-bottom:.5rem;border-bottom:1px solid var(--border-subtle)}
+.ms p{color:var(--text-dim);font-size:.95rem;line-height:1.8;margin-bottom:.75rem}
+.ms p strong{color:var(--text);font-weight:500}
+.ms p code{font-family:var(--mono);font-size:.85em;color:var(--accent);background:var(--accent-dim);padding:.1em .4em;border-radius:3px}
+.ms p em{color:var(--text);font-style:normal}
+.mr{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:1rem;margin-top:1rem}
+.mrc{background:var(--bg3);border:1px solid var(--border-subtle);border-radius:8px;padding:1rem;text-align:center}
+.mrn{font-family:var(--display);font-size:1.6rem;font-weight:800;color:var(--accent);line-height:1}
+.mrl{font-family:var(--mono);font-size:.68rem;color:var(--text-muted);margin-top:.3rem;letter-spacing:.05em}
+.sw{background:var(--bg3);border:1px solid var(--border-subtle);border-radius:10px;padding:1.5rem;overflow-x:auto;margin-top:1rem}
+.sw svg{display:block;margin:0 auto}
+@media(max-width:768px){nav{padding:1rem 1.5rem}.nav-links{display:none}section{padding:5rem 1.5rem}.ag{grid-template-columns:1fr;gap:3rem}.sg{grid-template-columns:1fr 1fr}.pc.ft{grid-column:span 1}footer{padding:1.5rem;flex-direction:column;gap:.5rem;text-align:center}.md{width:100vw}.mb{padding:1.5rem}.mh{padding:1.5rem}.photo-wrap{display:none}}
+@media(max-width:480px){.sg{grid-template-columns:1fr}.asg{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="#hero">EAAI</a>
+  <ul class="nav-links">
+    <li><a href="#about">Profil</a></li>
+    <li><a href="#experience">Expériences</a></li>
+    <li><a href="#projects">Projets</a></li>
+    <li><a href="#skills">Compétences</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a class="nav-cta" href="https://linkedin.com/in/el-amir-abdelkader-idir-ia" target="_blank">LinkedIn</a>
+  <a class="nav-cta" href="CV_IDIR_UTT.pdf" download style="margin-left:.75rem">CV PDF</a>
+</nav>
+
+<section id="hero">
+  <div class="hero-tag">Disponible — Alternance Sept. 2026</div>
+  <span id="typed-text"></span>
+  <h1><span class="hero-name">El Amir<br>Abdelkader</span><br><span class="hero-accent">IDIR</span></h1>
+  <p class="hero-sub">Élève ingénieur en <strong>Systèmes Numériques, IA & Nouvelles Technologies</strong> à l'UTT.<br>Je construis des systèmes intelligents là où l'IA rencontre l'industrie.</p>
+  <div class="hero-badges">
+    <span class="badge hl">LLM · RAG · Fine-Tuning</span>
+    <span class="badge hl">Automatisme OT</span>
+    <span class="badge">Python · LangChain</span>
+    <span class="badge">Siemens · Schneider</span>
+    <span class="badge">TOEIC 835</span>
+    <span class="badge">UTT 2025–2028</span>
+  </div>
+  <div class="hero-ctas">
+    <a class="btn-p" href="#projects">Voir mes projets</a>
+    <a class="btn-o" href="#contact">Me contacter</a>
+  </div>
+  <div class="hero-scroll">↓ scroll</div>
+  <div class="photo-wrap"><img src="amir-idir.jpg" alt="El Amir Abdelkader IDIR"></div>
+</section>
+
+<section id="about">
+  <div class="sh fade-in"><div class="st">01 · Profil</div><h2>IA × Industrie</h2></div>
+  <div class="ag">
+    <div class="at fade-in">
+      <p>Ingénieur en formation à l'<strong>UTT</strong> (2025–2028), je me spécialise à l'intersection de l'intelligence artificielle et des systèmes industriels.</p>
+      <p>Avant l'UTT, j'ai obtenu un <strong>BUT GEII Automatisme</strong> à l'Université de Lorraine, complété par deux missions terrain chez <span class="hl2">ARDATEM</span>, sur des projets critiques ArcelorMittal et AscoMetal.</p>
+      <p>Je cherche une <span class="hl2">alternance 24 mois</span> à partir de septembre 2026, au rythme 2 sem. école / 8 sem. entreprise, dans l'industrie, la défense ou l'énergie.</p>
+    </div>
+    <div class="asg fade-in">
+      <div class="sc"><div class="sn">~40%</div><div class="sl">Réduction temps diagnostic</div></div>
+      <div class="sc"><div class="sn">~99%</div><div class="sl">Disponibilité système</div></div>
+      <div class="sc"><div class="sn">1200</div><div class="sl">Alertes SMS fiabilisées</div></div>
+      <div class="sc"><div class="sn">835</div><div class="sl">TOEIC — Anglais B2</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="sh fade-in"><div class="st">02 · Expériences</div><h2>Terrain avant tout</h2></div>
+  <div class="tl">
+    <div class="ti fade-in">
+      <div class="tm"><span class="td">Mars – Juin 2025</span><span class="tc">ARDATEM</span></div>
+      <div class="tt">Intégrateur Contrôle-Commande</div>
+      <div class="tlo">Projet ArcelorMittal Belval — Luxembourg</div>
+      <p class="tdesc">Intégration et configuration de systèmes de contrôle-commande sur site sidérurgique critique. Système automatisé livré de A à Z (Schneider + interface opérateur). Guides de mise en service écrits et présentés directement aux techniciens — outil pris en main le jour même.</p>
+      <div class="tags"><span class="rtag">~30% réduction pannes maintenance</span><span class="tag">Schneider Electric</span><span class="tag">WinCC</span><span class="tag">SCADA</span><span class="tag">Contrôle-Commande</span></div>
+    </div>
+    <div class="ti fade-in">
+      <div class="tm"><span class="td">Mai – Juillet 2024</span><span class="tc">ARDATEM</span></div>
+      <div class="tt">Automaticien & Supervision Data</div>
+      <div class="tlo">Usine AscoMetal — France</div>
+      <p class="tdesc">Déploiement et fiabilisation du système d'alertes SMS de supervision industrielle sur 5 lignes de production. Coordination avec les équipes process, optimisation de la chaîne de données temps réel.</p>
+      <div class="tags"><span class="rtag">1 200 alertes SMS fiabilisées</span><span class="rtag">~99% disponibilité</span><span class="tag">Automatisme</span><span class="tag">Supervision</span><span class="tag">IHM</span><span class="tag">InTouch</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="sh fade-in"><div class="st">03 · Projets</div><h2>Ce que je construis</h2></div>
+  <p style="color:var(--text-muted);font-family:var(--mono);font-size:.78rem;margin-bottom:2rem;letter-spacing:.06em">Cliquer sur un projet pour voir l'architecture, les schémas et les résultats détaillés.</p>
+  <div class="pg">
+
+    <div class="pc ft fade-in" onclick="openModal('p1')">
+      <div class="pn">P.01 — Perso · 2024–en cours</div>
+      <div class="pt">Assistant IA Diagnostic Industriel</div>
+      <div class="px">Pipeline LLM local · Python · LangChain · Ollama · RAG</div>
+      <p class="pd">Assistant IA conçu seul pour interpréter les alertes industrielles et répondre aux questions techniques sur documentation PDF en moins de 2 secondes. Dashboard adopté par les équipes terrain.</p>
+      <div class="pr">~40% réduction du temps de diagnostic — dashboard adopté en production</div>
+      <div class="tags"><span class="tag">Python</span><span class="tag">LangChain</span><span class="tag">Ollama</span><span class="tag">RAG</span><span class="tag">LLM Local</span><span class="tag">Dashboard</span></div>
+      <div class="pcta">Voir architecture & détails →</div>
+    </div>
+
+    <div class="pc fade-in" onclick="openModal('p2')">
+      <div class="pn">P.02 — UTT · 2025</div>
+      <div class="pt">ADAS — Détection Hypovigilance</div>
+      <div class="px">Computer Vision · MediaPipe · Python · Temps réel</div>
+      <p class="pd">Détection de somnolence au volant par analyse faciale temps réel. 468 points faciaux, faux positifs réduits de 35%.</p>
+      <div class="pr">Précision ~92% · faux positifs –35% · &gt;20 FPS · &lt;50ms</div>
+      <div class="tags"><span class="tag">MediaPipe</span><span class="tag">OpenCV</span><span class="tag">EAR Ratio</span><span class="tag">Python</span></div>
+      <div class="pcta">Voir pipeline & détails →</div>
+    </div>
+
+    <div class="pc fade-in" onclick="openModal('p3')">
+      <div class="pn">P.03 — UTT · 2025–en cours</div>
+      <div class="pt">Fine-Tuning LLaMA 3.1 8B</div>
+      <div class="px">QLoRA · PEFT · Hugging Face · CUDA · RTX A4000</div>
+      <p class="pd">Fine-tuning d'un LLM 8B pour la détection de conflits littéraires. QLoRA pour tenir sur une seule RTX A4000, dataset ~250 exemples annotés.</p>
+      <div class="pr">Résultats attendus juin 2026 — entraînement RTX A4000</div>
+      <div class="tags"><span class="tag">LLaMA 3.1</span><span class="tag">QLoRA</span><span class="tag">PEFT</span><span class="tag">Hugging Face</span><span class="tag">CUDA</span></div>
+      <div class="pcta">Voir pipeline & détails →</div>
+    </div>
+
+    <div class="pc fade-in" onclick="openModal('p4')">
+      <div class="pn">P.04 — UTT · 2025</div>
+      <div class="pt">Système IoT de Suivi Scolaire</div>
+      <div class="px">ESP32 · RFID RC522 · Firebase · React · Cloud Functions</div>
+      <p class="pd">Système end-to-end : badge RFID → ESP32 → Firebase → React RBAC → Cloud Functions Python. Détection d'absences automatisée, notifications parents.</p>
+      <div class="pr">Latence &lt;1s · Absences auto · 3 scénarios validés</div>
+      <div class="tags"><span class="tag">ESP32</span><span class="tag">Firebase</span><span class="tag">React</span><span class="tag">Cloud Functions</span><span class="tag">IoT</span></div>
+      <div class="pcta">Voir architecture 3 couches →</div>
+    </div>
+
+    <div class="pc fade-in" onclick="openModal('p5')">
+      <div class="pn">P.05 — UTT · 2025</div>
+      <div class="pt">Prédiction d'Insuffisance Cardiaque</div>
+      <div class="px">ML comparatif · scikit-learn · 6 modèles · 918 patients</div>
+      <p class="pd">Comparaison rigoureuse de 6 algorithmes sur dataset clinique. Pipeline sans data leakage, EDA approfondie, imputation stratifiée. kNN k=7 meilleur modèle.</p>
+      <div class="pr">kNN k=7 · F1=0.919 · Recall=94.1%</div>
+      <div class="tags"><span class="tag">scikit-learn</span><span class="tag">kNN</span><span class="tag">Random Forest</span><span class="tag">SVM</span><span class="tag">EDA</span></div>
+      <div class="pcta">Voir pipeline & résultats →</div>
+    </div>
+
+  </div>
+</section>
+
+<section id="skills">
+  <div class="sh fade-in"><div class="st">04 · Compétences</div><h2>Stack technique</h2></div>
+  <div class="sg fade-in">
+    <div class="sg2"><span class="si">🤖</span><div class="sgt">IA & LLM</div><div class="sl2"><span class="sk">Python</span><span class="sk">LangChain</span><span class="sk">RAG</span><span class="sk">Fine-Tuning QLoRA / PEFT</span><span class="sk">Hugging Face</span><span class="sk">GPU / CUDA</span><span class="sk">Prompt Engineering</span></div></div>
+    <div class="sg2"><span class="si">📊</span><div class="sgt">Data & BI</div><div class="sl2"><span class="sk">SQL</span><span class="sk">Power BI</span><span class="sk">Tableau</span><span class="sk">Matplotlib</span><span class="sk">ETL</span><span class="sk">Docker</span><span class="sk">Azure / AWS</span></div></div>
+    <div class="sg2"><span class="si">⚙️</span><div class="sgt">Développement</div><div class="sl2"><span class="sk">Python</span><span class="sk">Java</span><span class="sk">C# / C++</span><span class="sk">APIs REST</span><span class="sk">Git</span><span class="sk">Linux</span></div></div>
+    <div class="sg2"><span class="si">🏭</span><div class="sgt">Automatisme OT</div><div class="sl2"><span class="sk">Siemens TIA Portal</span><span class="sk">Schneider Electric</span><span class="sk">SCADA / IHM</span><span class="sk">WinCC · InTouch</span><span class="sk">Protocoles industriels</span></div></div>
+    <div class="sg2"><span class="si">👁️</span><div class="sgt">Computer Vision</div><div class="sl2"><span class="sk">MediaPipe</span><span class="sk">OpenCV</span><span class="sk">Détection temps réel</span><span class="sk">Analyse faciale</span></div></div>
+    <div class="sg2"><span class="si">🌍</span><div class="sgt">Langues</div><div class="sl2"><span class="sk">Français — natif</span><span class="sk">Anglais — B2 (TOEIC 835)</span><span class="sk">Arabe — courant</span></div></div>
+  </div>
+</section>
+
+<section id="formation">
+  <div class="sh fade-in"><div class="st">05 · Formation</div><h2>Parcours académique</h2></div>
+  <div class="tl">
+    <div class="ti fade-in"><div class="tm"><span class="td">2025 – 2028</span><span class="tc">UTT Troyes</span></div><div class="tt">Diplôme d'Ingénieur — IA & Systèmes Numériques</div><div class="tlo">Université de Technologie de Troyes</div></div>
+    <div class="ti fade-in"><div class="tm"><span class="td">2022 – 2025</span><span class="tc">Université de Lorraine</span></div><div class="tt">BUT GEII — Automatisme</div><div class="tlo">Université de Lorraine, Longwy</div></div>
+    <div class="ti fade-in"><div class="tm"><span class="td">2021</span><span class="tc">Algérie</span></div><div class="tt">Baccalauréat Mathématiques Techniques</div><div class="tlo">Lycée Baghlia — Mention Très Bien</div></div>
+  </div>
+  <div class="div"></div>
+  <div class="sh fade-in" style="margin-bottom:1.5rem"><div class="st">Centres d'intérêt</div></div>
+  <div class="hero-badges fade-in">
+    <span class="badge hl">Veille IA · ArXiv · Hugging Face</span>
+    <span class="badge">Handball — 12 ans</span>
+    <span class="badge">Échecs</span>
+    <span class="badge">Permis B · Véhiculé</span>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="cb fade-in">
+    <div class="st" style="justify-content:center;margin-bottom:1rem">06 · Contact</div>
+    <h2 style="margin-bottom:1.5rem">Travaillons ensemble</h2>
+    <p>Je recherche une alternance de <strong>24 mois</strong> à partir de <strong>septembre 2026</strong>, dans l'industrie, la défense ou l'énergie. Rythme : 2 sem. école / 8 sem. entreprise. Mobile partout en France.</p>
+    <div class="cls">
+      <a class="cl" href="mailto:amirouidirou@gmail.com">✉ amirouidirou@gmail.com</a>
+      <a class="cl" href="https://linkedin.com/in/el-amir-abdelkader-idir-ia" target="_blank">in LinkedIn</a>
+      <a class="cl" href="tel:+33766457307">☎ +33 7 66 45 73 07</a>
+    </div>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+      <a class="btn-p" href="mailto:amirouidirou@gmail.com">M'écrire</a>
+      <a class="btn-o" href="CV_IDIR_UTT.pdf" download>Télécharger le CV</a>
+    </div>
+  </div>
+</section>
+
+<footer><p>© 2025 <span>El Amir Abdelkader IDIR</span></p><p>UTT · Systèmes Numériques, IA & Nouvelles Technologies</p></footer>
+
+<!-- MODAL -->
+<div class="mo" id="mo" onclick="closeModal()"></div>
+<div class="md" id="md">
+  <div class="mh">
+    <div><div class="mtag" id="mTag"></div><div class="mttl" id="mTitle"></div><div class="msub" id="mSub"></div></div>
+    <button class="mx" onclick="closeModal()">✕ Fermer</button>
+  </div>
+  <div class="mb" id="mBody"></div>
+</div>
+
+<script>
+// TYPING
+const phrases=['Ingénieur IA × Industrie','Fine-Tuning · RAG · LangChain','Automatisme OT · SCADA','Disponible — Alternance Sept. 2026'];
+let pi=0,ci=0,del=false;
+const tel=document.getElementById('typed-text');
+function type(){const cur=phrases[pi];if(!del){tel.textContent=cur.slice(0,ci+1)+'█';ci++;if(ci===cur.length){del=true;setTimeout(type,1800);return;}}else{tel.textContent=cur.slice(0,ci-1)+'█';ci--;if(ci===0){del=false;pi=(pi+1)%phrases.length;}}setTimeout(type,del?45:80);}
+type();
+
+// SCROLL ANIM
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');x.target.querySelectorAll('.fade-in').forEach((c,i)=>{c.style.transitionDelay=i*.08+'s';c.classList.add('visible');});}}),{threshold:.1});
+document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+
+// PROJECT DATA
+const PD={
+p1:{tag:'Projet Personnel · 2024 – en cours',title:'Assistant IA Diagnostic Industriel',sub:'Python · LangChain · Ollama · RAG · Dashboard',
+  secs:[
+    {t:'Contexte & Problème',c:`<p>En environnement industriel, les techniciens de maintenance perdent un temps considérable à chercher dans la documentation technique les causes d'une alarme. Les PDF de documentation sont volumineux, épars, et non interrogeables en langage naturel.</p><p><strong>Objectif :</strong> construire un assistant IA local capable de répondre en moins de 2 secondes à une question technique à partir de la documentation PDF de l'équipement, sans aucune dépendance cloud.</p>`},
+    {t:'Architecture du système',s:`<svg viewBox="0 0 680 190" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono,monospace"><defs><marker id="a1" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#00d4ff" opacity=".7"/></marker></defs><rect x="10" y="65" width="105" height="60" rx="6" fill="#111828" stroke="#00d4ff" stroke-opacity=".35"/><text x="62" y="91" text-anchor="middle" fill="#00d4ff" font-size="10">Technicien</text><text x="62" y="107" text-anchor="middle" fill="#9ca3af" font-size="8">Question</text><rect x="148" y="65" width="110" height="60" rx="6" fill="#111828" stroke="#00d4ff" stroke-opacity=".35"/><text x="203" y="88" text-anchor="middle" fill="#00d4ff" font-size="10">LangChain</text><text x="203" y="104" text-anchor="middle" fill="#9ca3af" font-size="8">Orchestration</text><rect x="295" y="10" width="110" height="55" rx="6" fill="#111828" stroke="#00d4ff" stroke-opacity=".35"/><text x="350" y="33" text-anchor="middle" fill="#00d4ff" font-size="9">Vector DB</text><text x="350" y="48" text-anchor="middle" fill="#9ca3af" font-size="8">Docs PDF</text><text x="350" y="61" text-anchor="middle" fill="#6b7280" font-size="8">embeddings</text><rect x="295" y="125" width="110" height="55" rx="6" fill="#111828" stroke="#00d4ff" stroke-opacity=".35"/><text x="350" y="148" text-anchor="middle" fill="#00d4ff" font-size="9">Ollama</text><text x="350" y="163" text-anchor="middle" fill="#9ca3af" font-size="8">LLM local</text><text x="350" y="176" text-anchor="middle" fill="#6b7280" font-size="8">LLaMA / Mistral</text><rect x="442" y="65" width="110" height="60" rx="6" fill="#111828" stroke="#00d4ff" stroke-opacity=".35"/><text x="497" y="91" text-anchor="middle" fill="#00d4ff" font-size="10">Dashboard</text><text x="497" y="107" text-anchor="middle" fill="#9ca3af" font-size="8">Réponse &lt;2s</text><rect x="587" y="65" width="88" height="60" rx="6" fill="#0a1a0a" stroke="#00d4ff" stroke-opacity=".5"/><text x="631" y="88" text-anchor="middle" fill="#00d4ff" font-size="9">Équipes</text><text x="631" y="103" text-anchor="middle" fill="#9ca3af" font-size="8">Terrain</text><line x1="115" y1="95" x2="146" y2="95" stroke="#00d4ff" stroke-opacity=".5" stroke-width="1.5" marker-end="url(#a1)"/><line x1="258" y1="82" x2="293" y2="42" stroke="#00d4ff" stroke-opacity=".5" stroke-width="1.5" marker-end="url(#a1)"/><line x1="350" y1="65" x2="350" y2="123" stroke="#00d4ff" stroke-opacity=".25" stroke-width="1" stroke-dasharray="4,3"/><text x="355" y="97" fill="#00d4ff" font-size="8" opacity=".5">RAG</text><line x1="258" y1="108" x2="293" y2="148" stroke="#00d4ff" stroke-opacity=".5" stroke-width="1.5" marker-end="url(#a1)"/><line x1="405" y1="90" x2="440" y2="95" stroke="#00d4ff" stroke-opacity=".5" stroke-width="1.5" marker-end="url(#a1)"/><line x1="405" y1="152" x2="440" y2="110" stroke="#00d4ff" stroke-opacity=".5" stroke-width="1.5" marker-end="url(#a1)"/><line x1="552" y1="95" x2="585" y2="95" stroke="#00d4ff" stroke-opacity=".5" stroke-width="1.5" marker-end="url(#a1)"/></svg>`},
+    {t:'Pourquoi ce choix technique',c:`<p><strong>LangChain</strong> orchestre le pipeline : découpage des PDF en chunks, création des embeddings, retrieval des passages pertinents, injection dans le prompt. <strong>Ollama</strong> fait tourner le LLM entièrement en local — essentiel en environnement industriel où la connectivité peut être limitée et la confidentialité des données critique.</p><p>La chaîne RAG permet d'interroger une documentation PDF de 200 pages comme si on parlait à un expert — sans fine-tuning, sans serveur cloud, sans coût d'API.</p>`},
+    {t:'Résultats',r:[{n:'~40%',l:'Réduction temps diagnostic'},{n:'&lt;2s',l:'Temps de réponse'},{n:'100%',l:'Local, 0 cloud'},{n:'Adopté',l:'Par les équipes terrain'}]}
+  ],tags:['Python','LangChain','Ollama','RAG','Vector DB','LLM local','Dashboard']},
+
+p2:{tag:'Projet UTT · 2025',title:'ADAS — Détection Hypovigilance',sub:'Python · MediaPipe · Computer Vision · Temps réel',
+  secs:[
+    {t:'Contexte & Objectif',c:`<p>La somnolence au volant est responsable de 20 à 30% des accidents mortels sur autoroute. L'objectif est de détecter en temps réel les signes de fatigue du conducteur à partir d'une simple caméra embarquée, sans aucun capteur supplémentaire, avec des contraintes strictes : précision &gt;90%, latence &lt;50ms, &gt;20 FPS.</p>`},
+    {t:'Pipeline de détection',s:`<svg viewBox="0 0 670 150" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono,monospace"><defs><marker id="a2" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#00d4ff" opacity=".7"/></marker></defs><rect x="5" y="45" width="100" height="60" rx="6" fill="#111828" stroke="#00d4ff" stroke-opacity=".35"/><text x="55" y="71" text-anchor="middle" fill="#00d4ff" font-size="9">Caméra</text><text x="55" y="85" text-anchor="middle" fill="#9ca3af" font-size="8">30 FPS</text><text x="55" y="99" text-anchor="middle" fill="#6b7280" font-size="8">embarquée</text><rect x="128" y="45" width="115" height="60" rx="6" fill="#111828" stroke="#00d4ff" stroke-opacity=".35"/><text x="186" y="68" text-anchor="middle" fill="#00d4ff" font-size="9">MediaPipe</text><text x="186" y="83" text-anchor="middle" fill="#9ca3af" font-size="8">468 landmarks</text><text x="186" y="98" text-anchor="middle" fill="#6b7280" font-size="8">visage temps réel</text><rect x="266" y="45" width="115" height="60" rx="6" fill="#111828" stroke="#00d4ff" stroke-opacity=".35"/><text x="324" y="68" text-anchor="middle" fill="#00d4ff" font-size="9">EAR Ratio</text><text x="324" y="83" text-anchor="middle" fill="#9ca3af" font-size="8">Eye Aspect Ratio</text><text x="324" y="98" text-anchor="middle" fill="#6b7280" font-size="8">6 pts / œil</text><rect x="404" y="45" width="115" height="60" rx="6" fill="#111828" stroke="#00d4ff" stroke-opacity=".35"/><text x="462" y="68" text-anchor="middle" fill="#00d4ff" font-size="9">Seuil Temporel</text><text x="462" y="83" text-anchor="middle" fill="#9ca3af" font-size="8">EAR &lt; 0.25</text><text x="462" y="98" text-anchor="middle" fill="#6b7280" font-size="8">pendant &gt;15 frames</text><rect x="542" y="20" width="118" height="38" rx="6" fill="#0a1a0a" stroke="#22c55e" stroke-opacity=".5"/><text x="601" y="43" text-anchor="middle" fill="#22c55e" font-size="9">OK — Éveillé</text><rect x="542" y="87" width="118" height="38" rx="6" fill="#1a0a0a" stroke="#ef4444" stroke-opacity=".5"/><text x="601" y="110" text-anchor="middle" fill="#f87171" font-size="9">ALERTE Fatigue</text><line x1="105" y1="75" x2="126" y2="75" stroke="#00d4ff" stroke-opacity=".5" stroke-width="1.5" marker-end="url(#a2)"/><line x1="243" y1="75" x2="264" y2="75" stroke="#00d4ff" stroke-opacity=".5" stroke-width="1.5" marker-end="url(#a2)"/><line x1="381" y1="75" x2="402" y2="75" stroke="#00d4ff" stroke-opacity=".5" stroke-width="1.5" marker-end="url(#a2)"/><line x1="519" y1="65" x2="540" y2="42" stroke="#00d4ff" stroke-opacity=".5" stroke-width="1.5" marker-end="url(#a2)"/><line x1="519" y1="85" x2="540" y2="105" stroke="#00d4ff" stroke-opacity=".5" stroke-width="1.5" marker-end="url(#a2)"/></svg>`},
+    {t:'Comment fonctionne l\'EAR',c:`<p><strong>MediaPipe Face Mesh</strong> détecte 468 points du visage. Parmi eux, 12 correspondent aux contours des paupières (6 par œil). Le ratio EAR mesure la hauteur relative de l'œil par rapport à sa largeur.</p><p>Un EAR normal est ≈ 0.3. Un clignement fait chuter l'EAR à 0 pendant 1-2 frames. La somnolence se manifeste par un EAR &lt; 0.25 pendant plus de 15 frames consécutives — ce seuil temporel élimine les faux positifs liés aux clignements normaux (–35%).</p>`},
+    {t:'Résultats',r:[{n:'~92%',l:'Précision détection'},{n:'–35%',l:'Faux positifs'},{n:'&gt;20',l:'FPS temps réel'},{n:'&lt;50ms',l:'Latence'}]}
+  ],tags:['Python','MediaPipe','OpenCV','EAR Ratio','Computer Vision','Temps réel','ADAS']},
+
+p3:{tag:'Projet UTT · 2025–en cours',title:'Fine-Tuning LLaMA 3.1 8B',sub:'QLoRA · PEFT · Hugging Face · CUDA · RTX A4000',
+  secs:[
+    {t:'Contexte & Objectif',c:`<p>LLaMA 3.1 8B est un modèle de 8 milliards de paramètres de Meta. L'objectif est de l'adapter pour détecter des conflits littéraires dans des textes narratifs — tâche nécessitant une compréhension fine du contexte et des relations entre personnages.</p><p><strong>Contrainte principale :</strong> entraîner sur un GPU unique RTX A4000 (16 Go VRAM) avec seulement ~250 exemples annotés.</p>`},
+    {t:'Pipeline d\'entraînement QLoRA',s:`<svg viewBox="0 0 670 160" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono,monospace"><defs><marker id="a3" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#00d4ff" opacity=".7"/></marker></defs><rect x="5" y="50" width="100" height="60" rx="6" fill="#111828" stroke="#00d4ff" stroke-opacity=".35"/><text x="55" y="74" text-anchor="middle" fill="#00d4ff" font-size="9">Dataset</text><text x="55" y="88" text-anchor="middle" fill="#9ca3af" font-size="8">~250 exemples</text><text x="55" y="102" text-anchor="middle" fill="#6b7280" font-size="8">annotés</text><rect x="128" y="50" width="108" height="60" rx="6" fill="#111828" stroke="#00d4ff" stroke-opacity=".35"/><text x="182" y="74" text-anchor="middle" fill="#00d4ff" font-size="9">Tokenizer</text><text x="182" y="88" text-anchor="middle" fill="#9ca3af" font-size="8">LLaMA</text><text x="182" y="102" text-anchor="middle" fill="#6b7280" font-size="8">Hugging Face</text><rect x="262" y="15" width="128" height="130" rx="8" fill="#0d1520" stroke="#00d4ff" stroke-opacity=".45"/><text x="326" y="38" text-anchor="middle" fill="#00d4ff" font-size="9">LLaMA 3.1 8B</text><text x="326" y="54" text-anchor="middle" fill="#6b7280" font-size="7">poids gelés (4-bit)</text><rect x="276" y="60" width="100" height="28" rx="4" fill="#111828" stroke="#00d4ff" stroke-opacity=".5"/><text x="326" y="78" text-anchor="middle" fill="#00d4ff" font-size="8">LoRA adapters</text><rect x="276" y="94" width="100" height="28" rx="4" fill="#111828" stroke="#00d4ff" stroke-opacity=".3"/><text x="326" y="112" text-anchor="middle" fill="#9ca3af" font-size="8">4-bit QLoRA</text><text x="326" y="135" text-anchor="middle" fill="#6b7280" font-size="7">PEFT library</text><rect x="416" y="50" width="108" height="60" rx="6" fill="#111828" stroke="#00d4ff" stroke-opacity=".35"/><text x="470" y="74" text-anchor="middle" fill="#00d4ff" font-size="9">RTX A4000</text><text x="470" y="88" text-anchor="middle" fill="#9ca3af" font-size="8">16 Go VRAM</text><text x="470" y="102" text-anchor="middle" fill="#6b7280" font-size="8">CUDA training</text><rect x="548" y="50" width="112" height="60" rx="6" fill="#0a1a0a" stroke="#00d4ff" stroke-opacity=".5"/><text x="604" y="71" text-anchor="middle" fill="#00d4ff" font-size="9">Modèle Fine-tuné</text><text x="604" y="87" text-anchor="middle" fill="#9ca3af" font-size="8">Détection conflits</text><text x="604" y="102" text-anchor="middle" fill="#6b7280" font-size="8">Juin 2026</text><line x1="105" y1="80" x2="126" y2="80" stroke="#00d4ff" stroke-opacity=".5" stroke-width="1.5" marker-end="url(#a3)"/><line x1="236" y1="80" x2="260" y2="80" stroke="#00d4ff" stroke-opacity=".5" stroke-width="1.5" marker-end="url(#a3)"/><line x1="390" y1="80" x2="414" y2="80" stroke="#00d4ff" stroke-opacity=".5" stroke-width="1.5" marker-end="url(#a3)"/><line x1="524" y1="80" x2="546" y2="80" stroke="#00d4ff" stroke-opacity=".5" stroke-width="1.5" marker-end="url(#a3)"/></svg>`},
+    {t:'Pourquoi QLoRA ?',c:`<p><strong>LoRA (Low-Rank Adaptation)</strong> insère de petites matrices d'adaptation dans les couches d'attention, sans modifier les poids originaux. Seul ~1% des paramètres est entraîné. <strong>QLoRA</strong> ajoute la quantification 4-bit du modèle de base — réduction mémoire de ~30 Go (bf16) à ~5 Go, entraînement possible sur une seule RTX A4000.</p><p>La bibliothèque <code>PEFT</code> de Hugging Face gère automatiquement la fusion des adapters LoRA au moment de l'inférence.</p>`},
+    {t:'Statut du projet',r:[{n:'8B',l:'Paramètres LLaMA'},{n:'~250',l:'Exemples annotés'},{n:'4-bit',l:'Quantification QLoRA'},{n:'Juin 26',l:'Résultats attendus'}]}
+  ],tags:['LLaMA 3.1 8B','QLoRA','PEFT','Hugging Face','CUDA','RTX A4000','Python','NLP']},
+
+p4:{tag:'Projet UTT OC01 · 2025',title:'Système IoT de Suivi Scolaire',sub:'ESP32 · RFID RC522 · Firebase · React · Cloud Functions Python',
+  secs:[
+    {t:'Contexte & Problème',c:`<p>La gestion des présences par feuille d'appel papier génère des pertes de temps pédagogique (5–10 min par cours), des erreurs de saisie et un manque de traçabilité. Ce projet digitalise intégralement ce processus via une architecture IoT cloud-native.</p>`},
+    {t:'Architecture 3 couches',s:`<svg viewBox="0 0 670 220" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono,monospace"><defs><marker id="a4" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#00d4ff" opacity=".7"/></marker></defs><text x="8" y="30" fill="#00d4ff" font-size="8" opacity=".6" letter-spacing="1.5">COUCHE PHYSIQUE</text><rect x="8" y="36" width="95" height="60" rx="6" fill="#111828" stroke="#00d4ff" stroke-opacity=".4"/><text x="56" y="59" text-anchor="middle" fill="#00d4ff" font-size="9">Badge RFID</text><text x="56" y="73" text-anchor="middle" fill="#9ca3af" font-size="8">RC522</text><text x="56" y="87" text-anchor="middle" fill="#6b7280" font-size="7">13.56 MHz · SPI</text><rect x="122" y="36" width="95" height="60" rx="6" fill="#111828" stroke="#00d4ff" stroke-opacity=".4"/><text x="170" y="59" text-anchor="middle" fill="#00d4ff" font-size="9">ESP32</text><text x="170" y="73" text-anchor="middle" fill="#9ca3af" font-size="8">WiFi + NTP</text><text x="170" y="87" text-anchor="middle" fill="#6b7280" font-size="7">Arduino IDE</text><rect x="236" y="36" width="95" height="60" rx="6" fill="#111828" stroke="#00d4ff" stroke-opacity=".3"/><text x="284" y="59" text-anchor="middle" fill="#00d4ff" font-size="9">LCD 16x2</text><text x="284" y="73" text-anchor="middle" fill="#9ca3af" font-size="8">I2C backpack</text><text x="284" y="87" text-anchor="middle" fill="#6b7280" font-size="7">Affichage statut</text><text x="8" y="118" fill="#00d4ff" font-size="8" opacity=".6" letter-spacing="1.5">COUCHE CLOUD</text><rect x="8" y="124" width="148" height="60" rx="6" fill="#111828" stroke="#00d4ff" stroke-opacity=".4"/><text x="82" y="147" text-anchor="middle" fill="#00d4ff" font-size="9">Firebase RTDB</text><text x="82" y="161" text-anchor="middle" fill="#9ca3af" font-size="8">NoSQL JSON</text><text x="82" y="175" text-anchor="middle" fill="#6b7280" font-size="7">SSL/TLS · Auth</text><rect x="170" y="124" width="148" height="60" rx="6" fill="#111828" stroke="#00d4ff" stroke-opacity=".3"/><text x="244" y="147" text-anchor="middle" fill="#00d4ff" font-size="9">Cloud Functions</text><text x="244" y="161" text-anchor="middle" fill="#9ca3af" font-size="8">Python · Cron</text><text x="244" y="175" text-anchor="middle" fill="#6b7280" font-size="7">Absences auto · Email</text><text x="8" y="204" fill="#00d4ff" font-size="8" opacity=".6" letter-spacing="1.5">COUCHE APPLICATION</text><rect x="8" y="210" width="138" height="8" rx="3" fill="#111828" stroke="#00d4ff" stroke-opacity=".3"/><text x="77" y="218" text-anchor="middle" fill="#00d4ff" font-size="7">React · RBAC Admin / Prof</text><rect x="156" y="210" width="120" height="8" rx="3" fill="#111828" stroke="#00d4ff" stroke-opacity=".2"/><text x="216" y="218" text-anchor="middle" fill="#9ca3af" font-size="7">Notifications email parents</text><line x1="103" y1="66" x2="120" y2="66" stroke="#00d4ff" stroke-opacity=".5" stroke-width="1.5" marker-end="url(#a4)"/><line x1="217" y1="66" x2="234" y2="66" stroke="#00d4ff" stroke-opacity=".5" stroke-width="1.5" marker-end="url(#a4)"/><line x1="170" y1="96" x2="82" y2="122" stroke="#00d4ff" stroke-opacity=".5" stroke-width="1.5" marker-end="url(#a4)"/><line x1="156" y1="154" x2="168" y2="154" stroke="#00d4ff" stroke-opacity=".4" stroke-width="1.5" marker-end="url(#a4)"/><line x1="82" y1="184" x2="82" y2="208" stroke="#00d4ff" stroke-opacity=".4" stroke-width="1.5" marker-end="url(#a4)"/><line x1="244" y1="184" x2="190" y2="208" stroke="#00d4ff" stroke-opacity=".4" stroke-width="1.5" marker-end="url(#a4)"/></svg>`},
+    {t:'Logique d\'algorithme',c:`<p>L'<strong>ESP32</strong> synchronise l'heure via NTP au démarrage, puis boucle en attendant un scan RFID. À chaque badge détecté, il interroge Firebase, récupère l'emploi du temps et calcule le statut : <em>présent</em> si scan dans les 15 premières minutes, <em>retard</em> sinon.</p><p>Les <strong>Cloud Functions Python</strong> tournent en Cron : <code>reset_journalier</code> à minuit génère les créneaux du lendemain, <code>verifier_absences</code> toutes les 15 min détecte les non-scans et déclenche les notifications parents.</p>`},
+    {t:'Tests validés',r:[{n:'&lt;1s',l:'Latence scan → DB'},{n:'3',l:'Scénarios validés'},{n:'Auto',l:'Détection absences'},{n:'RBAC',l:'Rôles Admin / Prof'}]}
+  ],tags:['ESP32','RFID RC522','Firebase','React','Cloud Functions','Python','NTP','SSL/TLS','IoT']},
+
+p5:{tag:'Projet UTT IA01 · 2025',title:'Prédiction d\'Insuffisance Cardiaque',sub:'scikit-learn · 6 modèles · 918 patients · Pipeline ML rigoureux',
+  secs:[
+    {t:'Dataset & Contexte médical',c:`<p>Dataset clinique de <strong>918 patients</strong> (Cleveland, Hongrie, Suisse). 11 variables : âge, sexe, type de douleur thoracique, pression artérielle, cholestérol, ECG, fréquence cardiaque maximale, angine d'effort, segment ST.</p><p>En médical, le <strong>Recall</strong> est la métrique prioritaire : rater un patient malade (faux négatif) est bien plus grave que classer un patient sain comme malade. Le F1-Score sert de métrique principale de comparaison.</p>`},
+    {t:'Pipeline ML',s:`<svg viewBox="0 0 670 140" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono,monospace"><defs><marker id="a5" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#00d4ff" opacity=".7"/></marker></defs><rect x="5" y="40" width="95" height="60" rx="6" fill="#111828" stroke="#00d4ff" stroke-opacity=".35"/><text x="53" y="63" text-anchor="middle" fill="#00d4ff" font-size="9">Dataset</text><text x="53" y="77" text-anchor="middle" fill="#9ca3af" font-size="8">918 patients</text><text x="53" y="91" text-anchor="middle" fill="#6b7280" font-size="8">11 features</text><rect x="118" y="40" width="105" height="60" rx="6" fill="#111828" stroke="#00d4ff" stroke-opacity=".35"/><text x="170" y="60" text-anchor="middle" fill="#00d4ff" font-size="9">EDA + Nettoyage</text><text x="170" y="75" text-anchor="middle" fill="#9ca3af" font-size="8">Outliers</text><text x="170" y="90" text-anchor="middle" fill="#6b7280" font-size="8">Imputation médiane</text><rect x="241" y="40" width="105" height="60" rx="6" fill="#111828" stroke="#00d4ff" stroke-opacity=".35"/><text x="294" y="60" text-anchor="middle" fill="#00d4ff" font-size="9">Pipeline sklearn</text><text x="294" y="75" text-anchor="middle" fill="#9ca3af" font-size="8">StandardScaler</text><text x="294" y="90" text-anchor="middle" fill="#6b7280" font-size="8">No data leakage</text><rect x="364" y="15" width="135" height="110" rx="8" fill="#0d1520" stroke="#00d4ff" stroke-opacity=".4"/><text x="432" y="36" text-anchor="middle" fill="#00d4ff" font-size="8">6 modèles testés</text><text x="432" y="53" text-anchor="middle" fill="#9ca3af" font-size="7.5">kNN · Logistic Reg.</text><text x="432" y="68" text-anchor="middle" fill="#9ca3af" font-size="7.5">Random Forest</text><text x="432" y="83" text-anchor="middle" fill="#9ca3af" font-size="7.5">SVM RBF · MLP</text><text x="432" y="98" text-anchor="middle" fill="#9ca3af" font-size="7.5">Decision Tree</text><rect x="517" y="40" width="148" height="60" rx="6" fill="#0a1a0a" stroke="#22c55e" stroke-opacity=".5"/><text x="591" y="62" text-anchor="middle" fill="#22c55e" font-size="9">kNN k=7</text><text x="591" y="77" text-anchor="middle" fill="#9ca3af" font-size="8">F1 = 0.919</text><text x="591" y="92" text-anchor="middle" fill="#6b7280" font-size="8">Recall = 94.1%</text><line x1="100" y1="70" x2="116" y2="70" stroke="#00d4ff" stroke-opacity=".5" stroke-width="1.5" marker-end="url(#a5)"/><line x1="223" y1="70" x2="239" y2="70" stroke="#00d4ff" stroke-opacity=".5" stroke-width="1.5" marker-end="url(#a5)"/><line x1="346" y1="70" x2="362" y2="70" stroke="#00d4ff" stroke-opacity=".5" stroke-width="1.5" marker-end="url(#a5)"/><line x1="499" y1="70" x2="515" y2="70" stroke="#00d4ff" stroke-opacity=".5" stroke-width="1.5" marker-end="url(#a5)"/></svg>`},
+    {t:'Pourquoi kNN gagne',c:`<p>La <strong>standardisation rigoureuse</strong> (StandardScaler fit uniquement sur X_train via Pipeline) place toutes les features sur la même échelle, permettant à kNN de calculer des distances euclidiennes fiables. Sans cette étape, Cholesterol (0–603) dominerait les calculs au détriment de Oldpeak (0–6).</p><p>Le <strong>nettoyage des outliers</strong> est décisif : suppression de RestingBP=0 (erreur de mesure), imputation médiane stratifiée pour les 172 valeurs Cholesterol=0 (données manquantes déguisées). Les patients avec profils cliniques similaires partagent le même statut — kNN exploite parfaitement cette structure de proximité.</p>`},
+    {t:'Résultats comparatifs',r:[{n:'0.919',l:'F1-Score kNN'},{n:'94.1%',l:'Recall (prioritaire)'},{n:'90.7%',l:'Accuracy'},{n:'1er/6',l:'Modèles comparés'}]}
+  ],tags:['scikit-learn','kNN','Random Forest','SVM RBF','Logistic Regression','MLP','EDA','Pipeline ML','Python']}
+};
+
+// MODAL LOGIC
+function openModal(id){
+  const p=PD[id];if(!p)return;
+  document.getElementById('mTag').textContent=p.tag;
+  document.getElementById('mTitle').textContent=p.title;
+  document.getElementById('mSub').textContent=p.sub;
+  const body=document.getElementById('mBody');body.innerHTML='';
+  p.secs.forEach(s=>{
+    const sec=document.createElement('div');sec.className='ms';
+    let h='<div class="mst">'+s.t+'</div>';
+    if(s.c)h+=s.c;
+    if(s.s)h+='<div class="sw">'+s.s+'</div>';
+    if(s.r){h+='<div class="mr">';s.r.forEach(x=>h+=`<div class="mrc"><div class="mrn">${x.n}</div><div class="mrl">${x.l}</div></div>`);h+='</div>';}
+    sec.innerHTML=h;body.appendChild(sec);
+  });
+  const tags=document.createElement('div');tags.className='ms';
+  tags.innerHTML='<div class="mst">Stack technique</div><div class="tags">'+p.tags.map(t=>`<span class="tag">${t}</span>`).join('')+'</div>';
+  body.appendChild(tags);
+  document.getElementById('mo').classList.add('open');
+  document.getElementById('md').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeModal(){
+  document.getElementById('mo').classList.remove('open');
+  document.getElementById('md').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+</script>
+</body>
+</html>
